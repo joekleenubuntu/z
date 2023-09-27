@@ -13,7 +13,7 @@ cookie =  os.environ["COOKIECH"]
 formhash =  os.environ["FORMHASHCH"]
 urlz=os.environ["CHURL"]
 def q():
-    i = ["40", "38", "39", "41", "42", "46", "47", "48", "101"]
+    i = ["41", "109", "2", "36", "37", "103", "155", "95", "141"]
     id = random.choice(i)
     url = str(urlz)+"/forum-" + str(id) + "-" + str(
         random.randint(1, 10)) + ".html"
