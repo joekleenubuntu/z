@@ -25,7 +25,7 @@ def q():
     # requests.get(url=url0, headers=headers)
     res = requests.get(url=url, headers=headers).text
     c = str(res)
-    zz = r'forum\.php\?mod=viewthread&tid=(\d+)&extra=page%3D1%26filter%3Dauthor%26orderby%3Ddateline'
+    zz = r'forum\.php\?mod=viewthread&tid=(\d+)&extra=page=1&filter=author&orderby=dateline'
     d = re.findall(zz, c, re.S)
     #去重
     d=list(set(d))
