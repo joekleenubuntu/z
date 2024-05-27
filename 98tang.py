@@ -13,10 +13,9 @@ cookie =  os.environ["COOKIECH"]
 formhash =  os.environ["FORMHASHCH"]
 urlz=os.environ["CHURL"]
 def q():
-    i = ["41", "109", "2", "36", "37", "103", "155", "95", "141"]
+    i = [ "109", "2", "36", "37", "103", "155", "95", "141"]
     id = random.choice(i)
-    url = str(urlz)+"/forum-" + str(id) + "-" + str(
-        random.randint(1, 10)) + ".html"
+    url = str(urlz)+"/forum.php?mod=forumdisplay&fid=" + str(id)
     headers = {
         "user-agent":
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.183 Safari/537.36",
@@ -26,7 +25,7 @@ def q():
     # requests.get(url=url0, headers=headers)
     res = requests.get(url=url, headers=headers).text
     c = str(res)
-    zz = r'thread-(......)-1-1'
+    zz = r'forum\.php\?mod=viewthread&tid=(\d+)&extra=page%3D1%26filter%3Dauthor%26orderby%3Ddateline'
     d = re.findall(zz, c, re.S)
     #去重
     d=list(set(d))
